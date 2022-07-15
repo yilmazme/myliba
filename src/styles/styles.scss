@@ -1,0 +1,32 @@
+
+@font-face {
+  font-family: proxima-nova;
+  src: url("/assets/fonts/proxima-nova.otf") format("opentype");
+}
+
+@import "./mixins";
+@import "./variables";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "proxima-nova", sans-serif;
+}
+
+html {
+  font-size: 16px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+input {
+  padding-left: 0.5rem;
+  border: none;
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+

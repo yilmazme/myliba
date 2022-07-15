@@ -1,0 +1,32 @@
+@mixin flex($direction, $justify, $align) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin centerSelf {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin fullContainer {
+    width: 100vw;
+    min-height: 100vh;
+}
+
+@keyframes reveal_animation {
+    from {
+        opacity: 0.1;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@mixin reveal($time) {
+    animation: reveal_anim $time linear;
+}

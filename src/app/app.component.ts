@@ -1,10 +1,31 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { first, take, takeUntil } from 'rxjs';
+import User from './models/user.dto';
+import { UsersService } from './services/users.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  users: User[] = [];
   title = 'myliba';
+
+  constructor(private usersService: UsersService) {
+    usersService.checkOrSetLocalUsers();
+  }
+
+  ngOnInit(): void {
+    this.usersService
+      .getUsers()
+      .pipe(first())
+      .subscribe({
+        next: (res) => {
+          console.log(res);
+          this.users = res;
+        },
+        error: (err) => console.log(err),
+      });
+  }
 }
