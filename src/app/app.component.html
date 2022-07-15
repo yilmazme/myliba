@@ -1,2 +1,16 @@
-<myl-form></myl-form>
-<myl-list></myl-list>
+<div class="container">
+    <div class="header">
+        <h3>Users CRUD Apllication</h3>
+    </div>
+    <div class="content">
+        <div class="form-container">
+            <myl-form (usersChanged)="usersChanged($event)"></myl-form>
+        </div>
+        <div class="table-container">
+            <myl-list [users]="users"></myl-list>
+        </div>
+    </div>
+    <div class="footer">
+        <a href="https://mehmet.vercel.app/" target="_blank" rel="noopener noreferrer">mehmet yılmaz</a>
+    </div>
+</div>

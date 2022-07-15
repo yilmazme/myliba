@@ -1,1 +1,24 @@
-<p>list works!</p>
+<table class="table table-striped responsive">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+            <td>{{user.name}} </td>
+            <td>{{user.surname}} </td>
+            <td>{{user.email}} </td>
+            <td>
+                <span tooltip="edit this user" placement="top" (click)="editUser(user.id)"
+                    style="font-size: 1em; color: #1b65a7; cursor: pointer;"> <i class="fa fa-edit"></i></span>
+                <span tooltip="delete this user" placement="top" (click)="deleteUser(user.id)"
+                    style="font-size: 1em; color: rgb(189, 33, 5); cursor: pointer; margin-left: 2rem;"> <i
+                        class="fa fa-trash"></i></span>
+            </td>
+        </tr>
+    </tbody>
+</table>

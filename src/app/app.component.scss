@@ -1,0 +1,128 @@
+@import "src/styles/variables";
+@import "src/styles/mixins";
+
+::ng-deep {
+    .alert-error {
+        .swal2-popup {
+            background: $red  !important;
+            color: #000;
+        }
+    }
+
+    .alert-success {
+        .swal2-popup {
+            background: $darkGreen  !important;
+            color: #fff;
+        }
+    }
+}
+
+.container {
+    @include fullContainer;
+    @include flex(column, flex-start, center);
+    padding-top: 4rem;
+    background-color: $white;
+
+    .header {
+        background-color: $blue;
+        width: 100vw;
+        color: $white;
+        text-align: center;
+        position: fixed;
+        top: 0;
+        height: 4rem;
+
+        h3 {
+            letter-spacing: 1px;
+            font-size: 2rem;
+            font-weight: 600;
+            @include centerSelf;
+
+        }
+    }
+
+    .content {
+        @include flex(row, space-between, flex-start);
+        border: 1px solid $blue;
+        width: 70vw;
+
+        overflow-y: auto;
+        padding: 2rem;
+        margin-top: 5rem;
+        overflow: hidden;
+
+        .form-container {
+            width: 50%;
+        }
+
+        .table-container {
+            width: 50%;
+            max-height: 60vh;
+            overflow-y: scroll;
+            scrollbar-width: none;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+    }
+
+    .footer {
+        background-color: $black;
+        color: $white;
+        width: 100vw;
+        height: 3rem;
+        position: fixed;
+        bottom: 0;
+
+        a {
+            @include centerSelf;
+        }
+    }
+}
+
+
+@media (max-width: 673px) {
+
+    .container {
+        @include fullContainer;
+        @include flex(column, space-between, center);
+        background-color: $white;
+
+        .header {
+            h3 {
+                letter-spacing: 1px;
+                font-size: 1.2rem;
+                font-weight: 600
+            }
+        }
+
+        .content {
+            @include flex(column, flex-start, center);
+            flex-direction: column-reverse;
+            border: none;
+            width: 100vw;
+            padding: 0;
+            margin-top: 2rem;
+            padding-bottom: 4rem;
+
+            .form-container {
+                width: 100%;
+                padding: 0 1rem;
+                margin: auto;
+            }
+
+            .table-container {
+                width: 100%;
+                padding: 1rem 0.2rem;
+                overflow-y: auto;
+            }
+        }
+
+        .footer {
+            background-color: $black;
+        }
+    }
+
+
+}

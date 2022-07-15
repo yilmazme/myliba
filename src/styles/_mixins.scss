@@ -30,3 +30,16 @@
 @mixin reveal($time) {
     animation: reveal_anim $time linear;
 }
+
+@mixin formButton{
+    cursor: pointer;
+    &:hover {
+        padding: 0.7rem;
+        transition-duration: 200ms;
+      }
+    
+      &:disabled {
+        opacity: 0.4;
+        box-shadow: 1px 2px gray;
+      }
+}

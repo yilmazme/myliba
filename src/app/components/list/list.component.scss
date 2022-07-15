@@ -1,0 +1,28 @@
+@import "src/styles/variables";
+@import "src/styles/mixins";
+
+table {
+    width: 100%;
+    text-align: left;
+    overflow-y: auto;
+
+    thead {
+        font-size: 1.25rem;
+        background-color: $blue;
+        color: $white;
+    }
+
+}
+
+@media (max-width: 673px) {
+    table {
+        width: 100vw;
+        text-align: left;
+
+        thead {
+            font-size: 1.25rem;
+
+        }
+    }
+
+}

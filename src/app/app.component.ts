@@ -17,6 +17,9 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.getUsers();
+  }
+  getUsers() {
     this.usersService
       .getUsers()
       .pipe(first())
@@ -27,5 +30,11 @@ export class AppComponent implements OnInit {
         },
         error: (err) => console.log(err),
       });
+  }
+  usersChanged(val: boolean) {
+    if (val) {
+      this.getUsers();
+    }
+    return;
   }
 }

@@ -1,1 +1,48 @@
-<p>form works!</p>
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="name">Name
+            <span *ngIf="f['name'].invalid" class="fa-required-icon" tooltip="Required with min 2 characters"
+                placement="right">
+                <i class="fas fa-asterisk"></i>
+            </span>
+        </label>
+        <input type="text" formControlName="name" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f['name'].errors }" placeholder="" />
+        <div *ngIf="submitted && f['name'].errors" class="invalid-feedback">
+            <div *ngIf="f['name'].errors['required']"> Name is required</div>
+            <div *ngIf="f['name'].errors['minlength']">At least two characters</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="surname">Surname
+            <span *ngIf="f['surname'].invalid" class="fa-required-icon" tooltip="Required with min 2 characters"
+                placement="right">
+                <i class="fas fa-asterisk"></i>
+            </span>
+        </label>
+        <input type="text" formControlName="surname" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f['surname'].errors }" placeholder="" />
+        <div *ngIf="submitted && f['surname'].errors" class="invalid-feedback">
+            <div *ngIf="f['surname'].errors['required']"> Surname is required</div>
+            <div *ngIf="f['surname'].errors['minlength']">At least two characters</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="email">Email
+            <span *ngIf="f['email'].invalid" class="fa-required-icon" tooltip="Required with min 2 characters"
+                placement="right">
+                <i class="fas fa-asterisk"></i>
+            </span>
+        </label>
+        <input type="text" formControlName="email" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f['email'].errors }" placeholder="" />
+        <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+            <div *ngIf="f['email'].errors['required']">Email is required</div>
+            <div *ngIf="f['email'].errors['minlength']">At least two characters</div>
+        </div>
+    </div>
+    <div class="button-group">
+        <button type="submit" [disabled]="loading || userForm.invalid">{{editId? 'Update' : 'Add'}}</button>
+        <button type="button" (click)="resetForm()">Reset</button>
+    </div>
+</form>
