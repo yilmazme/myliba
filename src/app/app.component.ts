@@ -25,7 +25,6 @@ export class AppComponent implements OnInit {
       .pipe(first())
       .subscribe({
         next: (res) => {
-          console.log(res);
           this.users = res;
         },
         error: (err) => console.log(err),

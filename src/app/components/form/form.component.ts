@@ -77,7 +77,6 @@ export class FormComponent implements OnInit, OnDestroy {
             'user added successfully',
             'success'
           ).then(() => {
-            console.log(res);
             this.usersChanged.emit(true);
             this.userForm.reset();
             this.submitted = false;
@@ -88,7 +87,6 @@ export class FormComponent implements OnInit, OnDestroy {
         error: () =>
           AlertService.Alert('User not added', 'Something went wrong', 'error'),
       });
-    console.log(newUser);
   }
   editUser() {
     const newUser: User = {
@@ -120,7 +118,6 @@ export class FormComponent implements OnInit, OnDestroy {
             'error'
           ),
       });
-    console.log(newUser);
   }
 
   patchUser() {

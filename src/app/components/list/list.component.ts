@@ -32,7 +32,6 @@ export class ListComponent implements OnInit {
           .pipe(first())
           .subscribe({
             next: (res) => {
-              console.log(res);
               this.users = res;
             },
             error: (err) => console.log(err),
@@ -42,18 +41,5 @@ export class ListComponent implements OnInit {
   }
   editUser(id: any) {
     this.usersService.setApiValue(id);
-    console.log(id);
   }
-  // getUsers() {
-  //   this.usersService
-  //     .getUsers()
-  //     .pipe(first())
-  //     .subscribe({
-  //       next: (res) => {
-  //         console.log(res);
-  //         this.users = res;
-  //       },
-  //       error: (err) => console.log(err),
-  //     });
-  // }
 }
