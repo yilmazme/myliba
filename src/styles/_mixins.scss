@@ -17,20 +17,6 @@
     min-height: 100vh;
 }
 
-@keyframes reveal_animation {
-    from {
-        opacity: 0.1;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-@mixin reveal($time) {
-    animation: reveal_anim $time linear;
-}
-
 @mixin formButton{
     cursor: pointer;
     &:hover {

@@ -12,6 +12,7 @@ table {
         color: $white;
         position: sticky;
         top: 0;
+        z-index: 2;
     }
 
 }
@@ -23,6 +24,11 @@ table {
 
         thead {
             font-size: 1.25rem;
+            background-color: $blue;
+            color: $white;
+            position: sticky;
+            top: -1rem;
+            z-index: 2;
 
         }
     }

@@ -90,6 +90,7 @@
         background-color: $white;
 
         .header {
+            z-index: 3;
             h3 {
                 letter-spacing: 1px;
                 font-size: 1.2rem;
